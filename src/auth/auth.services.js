@@ -1,3 +1,5 @@
+/*
+
 const jwt = require('jsonwebtoken')
 
 const {loginUser} = require('./auth.controller');
@@ -43,3 +45,5 @@ const login = ( req, res ) => {
 module.exports = {
     login
 }
+
+*/

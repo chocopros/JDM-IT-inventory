@@ -1,9 +1,19 @@
 //> RELACIONES
 
-const Users = require('./users.models')
+//? DEPENDENCIES MODELS
+const Teams = require('./teams.models');
+const Positions = require('./positions.models');
+const Employees = require('./employees.models');
 
 const initModels = () => {
-    Users
+    Positions.hasOne(Employees,{
+        foreignKey: 'positions_employees'
+    });
+   
+    Teams.hasOne(Employees,{
+        foreignKey: 'teams_employees'
+    });
+    
 };
 
-module.exports = initModels
+module.exports = initModels;

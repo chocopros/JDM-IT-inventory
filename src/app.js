@@ -12,8 +12,8 @@ app.use(express.json());
 app.use(cors()) // implementara cors en tu servidor
 
 //> ROUTES <<
-const useRouter = require('./users/users.router')
-const authRouter = require('./auth/auth.router')
+//const useRouter = require('./users/users.router')
+//const authRouter = require('./auth/auth.router')
 
 //>> DATABASE AUTH AND SYNC <<
 db.authenticate()
@@ -38,8 +38,8 @@ app.get('/', (req, res, next) => {
 
 
 //> >>>ROUTER USE<<<
-app.use('/api/v1/users',useRouter); //? users
-app.use('/api/v1/auth', authRouter); //? auth
+//app.use('/api/v1/users',useRouter); //? users
+//app.use('/api/v1/auth', authRouter); //? auth
 
 
 //> SERVER LISTEN

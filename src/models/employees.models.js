@@ -1,12 +1,13 @@
 const {DataTypes} = require('sequelize');
-
 const db = require('../utils/database');
 
-const Users = db.define('users', {
+const Employees = db.define('employees', {
 
-    id: {
+    employeeId: {
+        field: 'employee_id',
         primaryKey: true,
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
         allowNull: false
     },
     firstName: {
@@ -19,18 +20,9 @@ const Users = db.define('users', {
         type: DataTypes.STRING(30),
         allowNull: false
     },
-    gender: {
-        type: DataTypes.STRING(30),
+    age: {
+        type: DataTypes.INTEGER,
         allowNull: true
-    },
-    birthday: {
-        type: DataTypes.DATEONLY,
-        allowNull: false
-    },
-    role: {
-        type: DataTypes.STRING(30),
-        allowNull: false,
-        defaultValue: 'user'
     },
     email: {
         type: DataTypes.STRING(50),
@@ -52,8 +44,13 @@ const Users = db.define('users', {
         field: 'is_validated',
         type: DataTypes.BOOLEAN,
         allowNull: false   
+    },
+    role: {
+        type: DataTypes.STRING(30),
+        allowNull: false,
+        defaultValue: 'user'
     }
    
 });
 
-module.exports = Users
+module.exports = Employees

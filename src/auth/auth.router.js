@@ -1,3 +1,5 @@
+/*
+
 //? Auth va a conetener las turas de autorizacion y autentificacion
 
 //* Login
@@ -17,3 +19,5 @@ router.post('/register', createUser)
 router.post('/login', authServices.login)
 
 module.exports = router
+
+*/

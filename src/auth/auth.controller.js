@@ -1,3 +1,4 @@
+/*
 //? Dependencies
 const {comparePassword} = require('../utils/crypto');
 const {getUserByEmail} = require('../users/users.controllers');
