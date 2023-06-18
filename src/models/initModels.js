@@ -6,6 +6,14 @@ const Positions = require('./positions.models');
 const Employees = require('./employees.models');
 
 const initModels = () => {
+    
+
+    Positions.hasOne(Employees);
+   
+    Teams.hasOne(Employees);
+
+
+    /*
     Positions.hasOne(Employees,{
         foreignKey: 'positions_employees'
     });
@@ -13,7 +21,7 @@ const initModels = () => {
     Teams.hasOne(Employees,{
         foreignKey: 'teams_employees'
     });
-    
+    */
 };
 
 module.exports = initModels;

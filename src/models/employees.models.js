@@ -1,6 +1,10 @@
 const {DataTypes} = require('sequelize');
 const db = require('../utils/database');
 
+const Teams = require('./teams.models');
+const Positions = require('./positions.models');
+
+
 const Employees = db.define('employees', {
 
     employeeId: {
@@ -35,6 +39,24 @@ const Employees = db.define('employees', {
     password: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    teamId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        field: 'teams_id',
+        references: {
+            key: 'id',
+            model: Teams
+        }
+    },
+    positionId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        field: 'positions_id',
+        references: {
+            key: 'id',
+            model: Positions
+        }
     },
     status: {
         type: DataTypes.STRING(10),
