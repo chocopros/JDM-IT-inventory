@@ -4,6 +4,8 @@
 const Teams = require('./teams.models');
 const Positions = require('./positions.models');
 const Employees = require('./employees.models');
+const Computers = require('./computers.models');
+
 
 const initModels = () => {
     
@@ -13,6 +15,9 @@ const initModels = () => {
    
     Teams.hasOne(Employees);
     Employees.belongsTo(Teams);
+
+    Computers.hasOne(Employees);
+    Employees.belongsTo(Computers);
 
     /*
     Positions.hasOne(Employees,{

@@ -6,9 +6,9 @@ const employeesControllers = require('./employees.controllers')
 
 //> CREATE EMPLOYEE
 const createEmployee = ( req, res ) => {
-    const {firstName,lastName,age,email,password,teamId,positionId} = req.body
-    if (firstName&&lastName&&age&&email&&password&&teamId&&positionId) {
-        employeesControllers.createNewEmployee({firstName,lastName,age,email,password,teamId,positionId})
+    const {firstName,lastName,age,email,password,teamId,positionId,computerId} = req.body
+    if (firstName&&lastName&&age&&email&&password&&teamId&&positionId&&computerId) {
+        employeesControllers.createNewEmployee({firstName,lastName,age,email,password,teamId,positionId,computerId})
             .then(r => res.status(201).json({message: `Employee: ${email} has Created`}))
             .catch(err => res.status(400).json(err))
     } else {
@@ -21,7 +21,8 @@ const createEmployee = ( req, res ) => {
                 "email": "jperez@jdmgroupcompany.com",
                 "password": "AcoountPassoword",
                 "teamId": 1,
-                "positionId": 1
+                "positionId": 1,
+                "computerId": 1
             }
         });
     }

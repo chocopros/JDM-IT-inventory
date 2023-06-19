@@ -9,7 +9,7 @@ const createNewPosition = ( req ,res ) => {
 
     if (position && description) {
         positionsControllers.createNewPosition({position,description})
-            .then(r => res.status(201).json(`Position= ${position} it's Created`))
+            .then(r => res.status(201).json({message: `Position ${position} it's Created`}))
             .catch(err => res.status(400).json({messageError: err}))
     } else {
         res.status(400).json({

@@ -15,6 +15,7 @@ app.use(cors()) // implementara cors en tu servidor
 const positionsRouter = require('./positions/positions.router')
 const teamsRouter = require('./teams/teams.router')
 const employeesRouter = require('./employees/employees.router')
+const computersRouter = require('./computers/computers.router')
 //const authRouter = require('./auth/auth.router')
 
 //>> DATABASE AUTH AND SYNC <<
@@ -37,7 +38,8 @@ app.get('/', (req, res, next) => {
         GET: {
             teams: `http://localhost:${port}/api/v1/teams`,
             employees: `http://localhost:${port}/api/v1/employees`,
-            positions: `http://localhost:${port}/api/v1/positions`
+            positions: `http://localhost:${port}/api/v1/positions`,
+            computers: `http://localhost:${port}/api/v1/computers`
         }
     });
 });
@@ -47,6 +49,7 @@ app.get('/', (req, res, next) => {
 app.use('/api/v1/positions',positionsRouter) //? positions
 app.use('/api/v1/teams',teamsRouter); //? teams
 app.use('/api/v1/employees',employeesRouter) //? Employees
+app.use('/api/v1/computers',computersRouter) //? Computers
 //app.use('/api/v1/auth', authRouter); //? auth
 
 

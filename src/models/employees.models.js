@@ -3,6 +3,7 @@ const db = require('../utils/database');
 
 const Teams = require('./teams.models');
 const Positions = require('./positions.models');
+const Computers = require('./computers.models');
 
 
 const Employees = db.define('employees', {
@@ -56,6 +57,15 @@ const Employees = db.define('employees', {
         references: {
             key: 'id',
             model: Positions
+        }
+    },
+    computerId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        field: 'computer_id',
+        references: {
+            key: 'id',
+            model: Computers
         }
     },
     status: {

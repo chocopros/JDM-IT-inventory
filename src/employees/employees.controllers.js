@@ -1,5 +1,6 @@
 //? DEPENDENCIES
 
+const Computers = require("../models/computers.models");
 const Employees = require("../models/employees.models");
 const Positions = require("../models/positions.models");
 const Teams = require("../models/teams.models");
@@ -14,15 +15,14 @@ const createNewEmployee = async (dataEmployee) => {
         password: dataEmployee.password,
         teamId: dataEmployee.teamId,
         positionId: dataEmployee.positionId,
+        computerId: dataEmployee.computerId,
         status: 'is_active',
         isValidated: true,
         role: 'normal'
-
     })
 };
 
 //GET ALL EMPLOYEES
-
 const getAllEmployees = async () => {
     return await Employees.findAndCountAll({
         attributes: ['firstName','lastName','age','email'],
@@ -33,6 +33,9 @@ const getAllEmployees = async () => {
             {
                 model: Teams,
                 attributes: ['id','nameTeam','description','email']
+            },
+            {
+                model: Computers,
             }
         ]
     })
