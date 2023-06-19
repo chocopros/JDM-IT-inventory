@@ -24,15 +24,7 @@
 ---
 
 # CMD
-npm init --y
-npm i express uuid sequelize dotenv pg pg-hstore bcrypt
-npm i -D nodemon
-npm i  passport passport-jwt jsonwebtoken
+- npm init --y
+- npm i express uuid sequelize dotenv pg pg-hstore bcrypt passport passport-jwt jsonwebtoken
+- npm i -D nodemon
 
-
-# TIME
-- S4-D1-02:05:35
-- S4-D3-00:35:53
-- S4-D4-00:08:52
-- S5-D1-00:46:29
-- S5-D1-02:02:15

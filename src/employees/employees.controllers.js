@@ -25,10 +25,14 @@ const createNewEmployee = async (dataEmployee) => {
 
 const getAllEmployees = async () => {
     return await Employees.findAndCountAll({
-        attributes: ['firstName','lastName','age','email','teamId','positionId'],
+        attributes: ['firstName','lastName','age','email'],
         include: [
             {
                 model: Positions
+            },
+            {
+                model: Teams,
+                attributes: ['id','nameTeam','description','email']
             }
         ]
     })

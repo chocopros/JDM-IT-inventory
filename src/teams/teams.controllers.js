@@ -14,7 +14,7 @@ const createNewTeam = async ( dataTeam ) => {
 //> GET ALL TEAMS
 const getAllTeams = async () => {
     return await Teams.findAll({
-        attributes: ['nameTeam','email','password']
+        attributes: ['id','nameTeam','email','password']
     });
 };
 

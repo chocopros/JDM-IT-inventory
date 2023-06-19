@@ -4,6 +4,29 @@ const employeesControllers = require('./employees.controllers')
 
 //! *** SERVICES ***
 
+//> CREATE EMPLOYEE
+const createEmployee = ( req, res ) => {
+    const {firstName,lastName,age,email,password,teamId,positionId} = req.body
+    if (firstName&&lastName&&age&&email&&password&&teamId&&positionId) {
+        employeesControllers.createNewEmployee({firstName,lastName,age,email,password,teamId,positionId})
+            .then(r => res.status(201).json({message: `Employee: ${email} has Created`}))
+            .catch(err => res.status(400).json(err))
+    } else {
+        res.status(400).json({
+            message: `Fail Fields Register`,
+            example: {
+                "firstName": "pepito",
+                "lastName": "perez",
+                "age": 30,
+                "email": "jperez@jdmgroupcompany.com",
+                "password": "AcoountPassoword",
+                "teamId": 1,
+                "positionId": 1
+            }
+        });
+    }
+};
+
 //> GET ALL EMPLOYEES
 const getAllEmployees = ( req, res ) => {
     employeesControllers.getAllEmployees()
@@ -12,5 +35,6 @@ const getAllEmployees = ( req, res ) => {
 };
 
 module.exports = {
+    createEmployee,
     getAllEmployees
 };

@@ -9,8 +9,16 @@ const createNewPosition = async (dataPosition) => {
     })
 };
 
+//> GET ALL POSITIONS
+const getAllPositions = async () => {
+    return await Positions.findAll({
+        attributes: ['id','position','description']
+    });
+};
+
 module.exports = {
-    createNewPosition
+    createNewPosition,
+    getAllPositions
 };
 
 
