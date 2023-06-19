@@ -1,7 +1,10 @@
 //? DEPENDENCIES
 
 const Employees = require("../models/employees.models");
+const Positions = require("../models/positions.models");
+const Teams = require("../models/teams.models");
 
+//CREATE NEW EMPLOYEE
 const createNewEmployee = async (dataEmployee) => {
     return await Employees.create({
         firstName: dataEmployee.firstName,
@@ -18,8 +21,22 @@ const createNewEmployee = async (dataEmployee) => {
     })
 };
 
+//GET ALL EMPLOYEES
+
+const getAllEmployees = async () => {
+    return await Employees.findAndCountAll({
+        attributes: ['firstName','lastName','age','email','teamId','positionId'],
+        include: [
+            {
+                model: Positions
+            }
+        ]
+    })
+};
+
 module.exports = {
-    createNewEmployee
+    createNewEmployee,
+    getAllEmployees
 };
 
 //> *** TEST ***

@@ -12,7 +12,8 @@ app.use(express.json());
 app.use(cors()) // implementara cors en tu servidor
 
 //> ROUTES <<
-//const useRouter = require('./users/users.router')
+const teamsRouter = require('./teams/teams.router')
+const employeesRouter = require('./employees/employees.router')
 //const authRouter = require('./auth/auth.router')
 
 //>> DATABASE AUTH AND SYNC <<
@@ -32,13 +33,17 @@ app.get('/', (req, res, next) => {
 }, (req, res) => {
     res.status(200).json({
         STATUS_SERVER: "OK!!!",
-        users: `http://localhost:${port}/api/v1/users`,
+        GET: {
+            teams: `http://localhost:${port}/api/v1/teams`,
+            employess: `http://localhost:${port}/api/v1/employees`
+        }
     })
 });
 
 
 //> >>>ROUTER USE<<<
-//app.use('/api/v1/users',useRouter); //? users
+app.use('/api/v1/teams',teamsRouter); //? teams
+app.use('/api/v1/employees',employeesRouter) //? Employees
 //app.use('/api/v1/auth', authRouter); //? auth
 
 

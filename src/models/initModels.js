@@ -9,9 +9,10 @@ const initModels = () => {
     
 
     Positions.hasOne(Employees);
+    Employees.belongsTo(Positions);
    
     Teams.hasOne(Employees);
-
+    Employees.belongsTo(Teams);
 
     /*
     Positions.hasOne(Employees,{
