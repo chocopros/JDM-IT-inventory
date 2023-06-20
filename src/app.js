@@ -16,6 +16,7 @@ const positionsRouter = require('./positions/positions.router')
 const teamsRouter = require('./teams/teams.router')
 const employeesRouter = require('./employees/employees.router')
 const computersRouter = require('./computers/computers.router')
+const monitorsRouter = require('./monitors/monitors.router')
 //const authRouter = require('./auth/auth.router')
 
 //>> DATABASE AUTH AND SYNC <<
@@ -39,7 +40,11 @@ app.get('/', (req, res, next) => {
             teams: `http://localhost:${port}/api/v1/teams`,
             employees: `http://localhost:${port}/api/v1/employees`,
             positions: `http://localhost:${port}/api/v1/positions`,
-            computers: `http://localhost:${port}/api/v1/computers`
+            computers: `http://localhost:${port}/api/v1/computers`,
+            monitors: {
+                get: `http://localhost:${port}/api/v1/monitors`,
+                assignment: `http://localhost:${port}/api/v1/computers/assignment`,
+            }
         }
     });
 });
@@ -50,6 +55,7 @@ app.use('/api/v1/positions',positionsRouter) //? positions
 app.use('/api/v1/teams',teamsRouter); //? teams
 app.use('/api/v1/employees',employeesRouter) //? Employees
 app.use('/api/v1/computers',computersRouter) //? Computers
+app.use('/api/v1/monitors',monitorsRouter) //? Monitors
 //app.use('/api/v1/auth', authRouter); //? auth
 
 
