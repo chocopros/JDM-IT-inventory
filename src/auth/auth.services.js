@@ -1,4 +1,4 @@
-/*
+
 
 const jwt = require('jsonwebtoken')
 
@@ -17,16 +17,16 @@ const login = ( req, res ) => {
     })
 
     loginUser(email, password)
-        .then(user => {      
-            if (user) {
+        .then(employee => {      
+            if (employee) {
                 //console.log(user)
-                if (user === 'inactive') {
-                    res.status(404).json({message: "USER was deleted or not found!!!"})
-                } else if (user) {
+                if (employee === 'inactive') {
+                    res.status(404).json({message: "Employee was deleted or not found!!!"})
+                } else if (employee) {
                     const token = jwt.sign({
-                        id: user.id,
-                        email: user.email,
-                        role: user.role
+                        id: employee.id,
+                        email: employee.email,
+                        role: employee.role
                     },jwtSecret)
                     res.status(200).json({message: "Correct Credentials", token})
                 }
@@ -46,4 +46,3 @@ module.exports = {
     login
 }
 
-*/

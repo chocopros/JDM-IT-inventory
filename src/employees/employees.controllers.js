@@ -52,9 +52,18 @@ const getAllEmployees = async () => {
     })
 };
 
+const getEmployeeByEmail = async(email) => {
+    return await Employees.findOne({
+        where: {
+            email
+        }
+    })
+};
+
 module.exports = {
     createNewEmployee,
-    getAllEmployees
+    getAllEmployees,
+    getEmployeeByEmail
 };
 
 //> *** TEST ***

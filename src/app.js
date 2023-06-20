@@ -17,7 +17,7 @@ const teamsRouter = require('./teams/teams.router')
 const employeesRouter = require('./employees/employees.router')
 const computersRouter = require('./computers/computers.router')
 const monitorsRouter = require('./monitors/monitors.router')
-//const authRouter = require('./auth/auth.router')
+const authRouter = require('./auth/auth.router')
 
 //>> DATABASE AUTH AND SYNC <<
 db.authenticate()
@@ -56,7 +56,7 @@ app.use('/api/v1/teams',teamsRouter); //? teams
 app.use('/api/v1/employees',employeesRouter) //? Employees
 app.use('/api/v1/computers',computersRouter) //? Computers
 app.use('/api/v1/monitors',monitorsRouter) //? Monitors
-//app.use('/api/v1/auth', authRouter); //? auth
+app.use('/api/v1/auth', authRouter); //? auth
 
 
 //> SERVER LISTEN

@@ -1,7 +1,5 @@
-/*
 //? Dependencies
-const {comparePassword} = require('../utils/crypto');
-const {getUserByEmail} = require('../users/users.controllers');
+const {getEmployeeByEmail} = require('../employees/employees.controllers')
 
 //* Email y Contrasena del Usuario
 //? Email is unique in the DB
@@ -12,23 +10,17 @@ const {getUserByEmail} = require('../users/users.controllers');
 
 const loginUser = async (email,passwordPlain) => {
     try {
-        const user = await getUserByEmail(email)
+        const employee = await getEmployeeByEmail(email)
         //console.log(user)
-        if (user === null) {
+        if (employee === null) {
             return false
         } else {
-            if(user.status === "inactive"){
+            if(employee.status === "inactive"){
                 return 'inactive';
             } else {
-                const verifyPassword = comparePassword(passwordPlain, user.password)
-                if (verifyPassword) {
-                    return user
-                } else {
-                return false;
-                }
+                return user
             };
         };
-
     } catch (err) {
         return err
     }
@@ -51,29 +43,4 @@ loginUser('beta@beta.com','p4s2W0rd*k3y')
     "email": "adm@admin.com",
     "password": "p4s2W0rd*k3y"
 
-*/
-
-
-/*
-const loginUser = async (email, pass) => {
-    const userEmail = await getUserByEmail(email)
-        .then(user => {
-            if (user !== null) {
-                const validation = comparePassword(pass, user.password)
-                if (validation) {
-                    console.log(user.dataValues)
-                    return user
-                } else {
-                    console.log('Password incorrecto')
-                    return false
-                }             
-            } else {
-                console.log(`USER NO REGISTER: ${email}`)
-                return false
-            }
-        })
-        .catch(err => {
-            err => console.log(err)
-        })
-};
 */
