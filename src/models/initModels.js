@@ -11,6 +11,7 @@ const Request = require('./request.models');
 const TypeSupport = require('./typeSupport.models');
 const References = require('./references.models');
 const Status = require('./status.models');
+const RequestComputer = require('./requestComputer.models');
 
 
 const initModels = () => {
@@ -42,6 +43,12 @@ const initModels = () => {
     Status .hasOne(Request);
     Request.belongsTo(Status);
 
+    //RELATIONS COMPUTER-REQUEST
+    Request.hasMany(RequestComputer);
+    RequestComputer.belongsTo(Request);
+
+    Computers.hasMany(RequestComputer);
+    RequestComputer.belongsTo(Computers);
 
     /*
     Positions.hasOne(Employees,{
