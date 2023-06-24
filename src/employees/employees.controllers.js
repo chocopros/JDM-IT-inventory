@@ -2,6 +2,8 @@
 
 const Computers = require("../models/computers.models");
 const Employees = require("../models/employees.models");
+const MoniEmployee = require("../models/monitorEmployee.models");
+const Monitors = require("../models/monitors.models");
 const Positions = require("../models/positions.models");
 const Teams = require("../models/teams.models");
 
@@ -36,14 +38,32 @@ const getAllEmployees = async () => {
             },
             {
                 model: Computers,
+            },
+            {
+                model: MoniEmployee,
+                attributes: ['id'],
+                include:[
+                    {
+                        model: Monitors
+                    }
+                ]
             }
         ]
     })
 };
 
+const getEmployeeByEmail = async(email) => {
+    return await Employees.findOne({
+        where: {
+            email
+        }
+    })
+};
+
 module.exports = {
     createNewEmployee,
-    getAllEmployees
+    getAllEmployees,
+    getEmployeeByEmail
 };
 
 //> *** TEST ***

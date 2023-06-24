@@ -7,6 +7,11 @@ const Employees = require('./employees.models');
 const Computers = require('./computers.models');
 const MoniEmployee = require('./monitorEmployee.models');
 const Monitors = require('./monitors.models');
+const Request = require('./request.models');
+const TypeSupport = require('./typeSupport.models');
+const References = require('./references.models');
+const Status = require('./status.models');
+const RequestComputer = require('./requestComputer.models');
 
 
 const initModels = () => {
@@ -21,13 +26,29 @@ const initModels = () => {
     Computers.hasOne(Employees);
     Employees.belongsTo(Computers);
 
+    //RELATIONS MONITORS-EMPLOYEES
     Employees.hasMany(MoniEmployee);
     MoniEmployee.belongsTo(Employees);
 
     Monitors.hasMany(MoniEmployee);
     MoniEmployee.belongsTo(Monitors);
 
+    //RELACIONS REQUEST
+    TypeSupport.hasOne(Request);
+    Request.belongsTo(TypeSupport);
 
+    References.hasOne(Request);
+    Request.belongsTo(References);
+
+    Status .hasOne(Request);
+    Request.belongsTo(Status);
+
+    //RELATIONS COMPUTER-REQUEST
+    Request.hasMany(RequestComputer);
+    RequestComputer.belongsTo(Request);
+
+    Computers.hasMany(RequestComputer);
+    RequestComputer.belongsTo(Computers);
 
     /*
     Positions.hasOne(Employees,{
