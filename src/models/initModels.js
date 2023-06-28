@@ -4,19 +4,24 @@
 const Teams = require('./teams.models');
 const Positions = require('./positions.models');
 const Employees = require('./employees.models');
+
 const Computers = require('./computers.models');
 const MoniEmployee = require('./monitorEmployee.models');
 const Monitors = require('./monitors.models');
+
 const Request = require('./request.models');
 const TypeSupport = require('./typeSupport.models');
 const References = require('./references.models');
 const Status = require('./status.models');
 const RequestComputer = require('./requestComputer.models');
 
+const Webcams = require('./webcams.models');
+const Accesories = require('./accesories.models');
+const Earphones = require('./earphones.models');
+
 
 const initModels = () => {
     
-
     Positions.hasOne(Employees);
     Employees.belongsTo(Positions);
    
@@ -50,15 +55,16 @@ const initModels = () => {
     Computers.hasMany(RequestComputer);
     RequestComputer.belongsTo(Computers);
 
-    /*
-    Positions.hasOne(Employees,{
-        foreignKey: 'positions_employees'
-    });
-   
-    Teams.hasOne(Employees,{
-        foreignKey: 'teams_employees'
-    });
-    */
+    //RELATIONS ACCESORIES-earphones-webcams
+    Employees.hasOne(Accesories);
+    Accesories.belongsTo(Employees);
+    
+    Earphones.hasOne(Accesories);
+    Accesories.belongsTo(Earphones);
+
+    Webcams.hasOne(Accesories);
+    Accesories.belongsTo(Webcams);
+    
 };
 
 module.exports = initModels;

@@ -17,7 +17,7 @@ const Computers = db.define('computers', {
     },
     serialNumber: {
         field: 'serial_number',
-        type: DataTypes.STRING(60),
+        type: DataTypes.STRING(100),
         allowNull: false,
         unique: true
     },
@@ -42,6 +42,11 @@ const Computers = db.define('computers', {
         field: 'hard_disk',
         type: DataTypes.STRING(33),
         allowNull: false
+    },
+    urlImage: {
+        field: 'img_url',
+        type: DataTypes.STRING,
+        allowNull: true
     }
 });
 

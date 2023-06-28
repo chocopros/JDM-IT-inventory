@@ -41,6 +41,11 @@ const Employees = db.define('employees', {
         type: DataTypes.STRING,
         allowNull: false
     },
+    urlImage: {
+        field: 'img_url',
+        type: DataTypes.STRING,
+        allowNull: true
+    },
     teamId: {
         type: DataTypes.INTEGER,
         allowNull: false,
