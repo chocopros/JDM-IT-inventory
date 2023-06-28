@@ -1,16 +1,37 @@
-//? DEPENDENCIES
-
+//?DEPENDENCIES
 const Request = require('../models/request.models');
+const RequestComputer = require('../models/requestComputer.models');
 
-//> CREATE NEW REQUEST
+
+
+// CREATE NEW REQUEST
 const createNewRequest = async (dataRequest) => {
-    return await Employees.create({
-        firstName: dataEmployee.firstName,
-        typesSupportId: dataEmployee.typesSupportId,
-        referenceId: dataEmployee.referenceId,
-        description: dataEmployee.description,
-        statusId: dataEmployee.statusId
+    return await Request.create({
+        typesSupportId: dataRequest.typesSupportId,
+        referenceId: dataRequest.referenceId,
+        description: dataRequest.description,
+        statusId: dataRequest.statusId
     })
 };
 
-//GET ALL REQUEST
+// GET ALL REQUEST
+const getAllRequest = async () => {
+    return await Request.findAll()
+};
+
+
+//! **** >>>ASSINAMENT<<< ****
+
+//> CREATE ASSIGNMENT
+const createNewAssignment = async (dataAssigment) => {
+    return await RequestComputer.create({
+        requestId: dataAssigment.requestId,
+        computerId: dataAssigment.computerId
+    })
+};
+
+module.exports = {
+    createNewRequest,
+    createNewAssignment,
+    getAllRequest
+}
