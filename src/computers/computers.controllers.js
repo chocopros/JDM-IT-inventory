@@ -10,14 +10,16 @@ const createNewComputer = async (dataComputer) => {
         model: dataComputer.model,
         processor: dataComputer.processor,
         memoryRam: dataComputer.memoryRam,
-        hardDisk: dataComputer.hardDisk
+        hardDisk: dataComputer.hardDisk,
+        videoCard: dataComputer.videoCard,
+        urlImg: null
     })
 };
 
 //> GET ALL COMPUTERS
 const getAllComputers = async () => {
     return await Computers.findAndCountAll({
-        attributes: ['id','brand','model']
+        attributes: ['id','serialNumber','brand','model','processor','memoryRam','hardDisk','img_url']
     })
 };
 

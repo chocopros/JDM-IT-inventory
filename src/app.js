@@ -1,6 +1,6 @@
 //?Dependencies
 const express = require('express');
-const cors = require('cors')
+const cors = require('cors');
 
 //? Initial Configs
 const app = express();
@@ -30,6 +30,8 @@ db.sync()
 
 initModels()
 
+
+// INDEX SERVER
 app.get('/', (req, res, next) => {
     console.log(req.method)
     next()

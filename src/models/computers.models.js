@@ -43,6 +43,11 @@ const Computers = db.define('computers', {
         type: DataTypes.STRING(33),
         allowNull: false
     },
+    videoCard: {
+        field: 'video_card',
+        type: DataTypes.STRING(33),
+        allowNull: true
+    },
     urlImage: {
         field: 'img_url',
         type: DataTypes.STRING,
