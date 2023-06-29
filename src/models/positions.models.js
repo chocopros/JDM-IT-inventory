@@ -11,7 +11,7 @@ const Positions = db.define('positions', {
         allowNull: false
     },
     position: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING(50),
         allowNull: false
     },
     description : {

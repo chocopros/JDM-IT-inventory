@@ -19,16 +19,22 @@ const computersRouter = require('./computers/computers.router')
 const monitorsRouter = require('./monitors/monitors.router')
 const authRouter = require('./auth/auth.router')
 
+
 //>> DATABASE AUTH AND SYNC <<
 db.authenticate()
     .then(() => console.log('DB AUTHENTIFICATED'))
     .catch(err => console.log(err))
 
 db.sync()
-    .then(() => console.log('DATA BASE SYNCED!!'))
+    .then(() => {
+        console.log('DATA BASE SYNCED!!')
+    })
     .catch(err => console.log(err))
 
 initModels()
+
+
+
 
 
 // INDEX SERVER
@@ -62,7 +68,7 @@ app.use('/api/v1/auth', authRouter); //? auth
 
 
 //> SERVER LISTEN
-const {port} = require('./config')
+const {port} = require('./config');
 app.listen(port,() => {
     console.log(`Server Started on PORT=${port}`)
 });
