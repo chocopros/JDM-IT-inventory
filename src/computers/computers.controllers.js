@@ -4,6 +4,7 @@ const Computers = require("../models/computers.models");
 //> CREATE NEW COMPUTER
 const createNewComputer = async (dataComputer) => {
     return await Computers.create({
+        isLaptop: false,
         isActive: true,
         serialNumber: dataComputer.serialNumber,
         brand: dataComputer.brand,

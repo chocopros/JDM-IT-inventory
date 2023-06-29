@@ -15,6 +15,11 @@ const Computers = db.define('computers', {
         type: DataTypes.BOOLEAN,
         allowNull: false   
     },
+    isLaptop: {
+        field: 'is_laptop',
+        type: DataTypes.BOOLEAN,
+        allowNull: false 
+    },
     serialNumber: {
         field: 'serial_number',
         type: DataTypes.STRING(60),
