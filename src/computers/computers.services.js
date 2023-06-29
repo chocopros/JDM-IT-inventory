@@ -5,22 +5,23 @@ const computersControllers = require('./computers.controllers')
 
 //> CREATE NEW COMPUTER
 const createComputer = ( req, res ) => {
-    const {serialNumber,brand,model,processor,memoryRam,hardDisk} = req.body
+    const {serialNumber,brand,model,processor,memoryRam,hardDisk,videoCard} = req.body
 
     if (serialNumber&&brand&&model&&processor&&memoryRam&&hardDisk) {
-        computersControllers.createNewComputer({serialNumber,brand,model,processor,memoryRam,hardDisk})
+        computersControllers.createNewComputer({serialNumber,brand,model,processor,memoryRam,hardDisk,videoCard})
             .then(r => res.status(201).json('Computer Registered, Created'))
             .catch(err => res.status(400).json(err))
     } else {
         res.status(400).json({
             message: 'Fails Fields Register',
             values: {
-                "serialNumber": "Teams's Name",
-                "brand": "Descriptions of teams",
-                "model": "teamsx@jdmgroupcompany.com",
-                "processor": "PasswordTeams123",
-                "memoryRam": "PasswordTeams123",
-                "hardDisk": "PasswordTeams123"
+                "serialNumber": "S3rial-XxX-12345",
+                "brand": "LENOVO",
+                "model": " ThinkCentre A25",
+                "processor": "INTEL i7-9000k 3.6 Ghz",
+                "memoryRam": "16GB DDR3",
+                "hardDisk": "500GB SSD",
+                "videoCard": "GTX 550 TI 1GB GDDR5 o >>vacio<<"
             }
         })
     }

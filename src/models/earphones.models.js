@@ -1,23 +1,15 @@
-//? DEPENDENCIES
 const {DataTypes} = require('sequelize');
 const db = require('../utils/database');
 
-//> TABLE MONITOR
-const Monitors = db.define('monitors', {
+const Earphones = db.define('earphones', {
     id: {
         primaryKey: true,
         type: DataTypes.INTEGER,
         autoIncrement: true,
         allowNull: false
     },
-    isActive: {
-        field: 'is_active',
-        type: DataTypes.BOOLEAN,
-        allowNull: false   
-    },
     serialNumber: {
-        field: 'serial_number',
-        type: DataTypes.STRING(100),
+        type: DataTypes.STRING(20),
         allowNull: false,
         unique: true
     },
@@ -29,15 +21,11 @@ const Monitors = db.define('monitors', {
         type: DataTypes.STRING(20),
         allowNull: false
     },
-    screenSize: {
-        type: DataTypes.STRING(20),
-        allowNull: true
-    },
-    urlImage: {
+    imgUrl: {
         field: 'img_url',
         type: DataTypes.STRING,
-        allowNull: true
-    },
+        allowNull: false
+    }
 });
 
-module.exports = Monitors
+module.exports = Earphones;

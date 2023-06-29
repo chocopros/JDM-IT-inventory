@@ -2,8 +2,6 @@
 const Request = require('../models/request.models');
 const RequestComputer = require('../models/requestComputer.models');
 
-
-
 // CREATE NEW REQUEST
 const createNewRequest = async (dataRequest) => {
     return await Request.create({
