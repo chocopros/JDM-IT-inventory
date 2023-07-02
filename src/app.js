@@ -6,6 +6,7 @@ const cors = require('cors');
 const app = express();
 const db = require('./utils/database');
 const initModels = require('./models/initModels');
+const initValues = require('./models/initValues');
 
 //> use format JSON
 app.use(express.json());
@@ -28,6 +29,7 @@ db.authenticate()
 
 db.sync()
     .then(() => {
+        initValues()
         console.log('DATA BASE SYNCED!!')
     })
     .catch(err => console.log(err))
@@ -42,7 +44,7 @@ app.get('/', (req, res, next) => {
 }, (req, res) => {
     res.status(200).json({
         STATUS_SERVER: "OK!!!",
-        GET: {
+        SERVICES: {
             teams: `http://localhost:${port}/api/v1/teams`,
             employees: `http://localhost:${port}/api/v1/employees`,
             positions: `http://localhost:${port}/api/v1/positions`,
