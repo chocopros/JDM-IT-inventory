@@ -47,7 +47,8 @@ const getAllEmployees = async () => {
                         model: Monitors
                     }
                 ]
-            }
+            },
+            
         ]
     })
 };

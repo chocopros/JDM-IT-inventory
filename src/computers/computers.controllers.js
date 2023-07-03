@@ -20,7 +20,7 @@ const createNewComputer = async (dataComputer) => {
 //> GET ALL COMPUTERS
 const getAllComputers = async () => {
     return await Computers.findAndCountAll({
-        attributes: ['id','serialNumber','brand','model','processor','memoryRam','hardDisk','img_url']
+        attributes: ['id','serialNumber','is_laptop','brand','model','processor','memoryRam','hardDisk','img_url']
     })
 };
 

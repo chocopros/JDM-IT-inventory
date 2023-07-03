@@ -4,7 +4,7 @@ const Earphones = require('../models/earphones.models')
 const Accesories = require('../models/accesories.models')
 
 //CREATE ACCESORIES
-const CreateAccesories = async(dataAccesories) => {
+const createAccesories = async(dataAccesories) => {
     return await Accesories.create({
         employeeEmployeeId: dataAccesories.employerId,
         earphoneId: dataAccesories.earphoneId,
@@ -19,11 +19,11 @@ const createCam = async (dataCam) => {
         serialNumber: dataCam.serialNumber,
         brand: dataCam.brand,
         model: dataCam.model,
-        imgUrl: null
+        imgUrl: 'https://http2.mlstatic.com/D_NQ_NP_2X_887217-MLV44117946514_112020-F.webp'
     })
 };
 
-//CREATE WEB CAMS
+//CREATE EARPHONE
 const createEarphone = async (dataEarphone) => {
     return await Earphones.create({
         serialNumber: dataEarphone.serialNumber,
@@ -34,5 +34,10 @@ const createEarphone = async (dataEarphone) => {
 };
 
 
+module.exports = {
+    createAccesories,
+    createCam,
+    createEarphone
+};
 
 

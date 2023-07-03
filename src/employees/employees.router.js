@@ -1,9 +1,9 @@
-const router = require('express').Router()
+const router = require('express').Router();
 
-const employeesServices = require('./employess.services')
+const employeesServices = require('./employess.services');
 
 router.route('/')
     .get(employeesServices.getAllEmployees)
-    .post(employeesServices.createEmployee)
+    .post(employeesServices.createEmployee);
 
-module.exports = router
+module.exports = router;

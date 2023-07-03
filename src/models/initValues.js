@@ -3,7 +3,8 @@ const Status = require('./status.models');
 const References = require("./references.models");
 const Positions = require("./positions.models");
 const Teams = require("./teams.models");
-
+const Earphones = require("./earphones.models");
+const WebCams = require('./webcams.models')
 
 //> VALUES TYPE SUPPORTS (HARDWARE&SOFWARE)
 const postTypeSupports = async () => {
@@ -95,6 +96,28 @@ const postTeams = async () => {
     ])
 };
 
+//EARPHONES
+const postEarphone = async () => {
+    return await Earphones.bulkCreate([
+        {serialNumber: "No Aplica",brand: "No aplica",model: "No aplica", imgUrl: "" },
+        {serialNumber: "1",brand: "HP",model: "Headset H120G", imgUrl: "https://http2.mlstatic.com/D_NQ_NP_2X_887217-MLV44117946514_112020-F.webp" },
+        {serialNumber: "2",brand: "Redragon",model: "H260", imgUrl: "https://http2.mlstatic.com/D_NQ_NP_754688-MLV49160437416_022022-O.webp" }
+    ])
+};
+
+//WEBCAMS
+const postWebCams = async () => {
+    return await WebCams.bulkCreate([
+        {serialNumber: "No Aplica",brand: "No aplica",model: "No aplica", imgUrl: "" },
+        {serialNumber: "1",brand: "China",model: "Desconocida", imgUrl: "https://http2.mlstatic.com/D_NQ_NP_2X_887217-MLV44117946514_112020-F.webp" },
+        {serialNumber: "2",brand: "Logitech",model: "Logi C505", imgUrl: "https://http2.mlstatic.com/D_NQ_NP_616291-MLV49665401114_042022-O.webp" }
+    ])
+};
+
+
+
+
+
 const initValues = async () => {
 
     const dataPositions = await Positions.count();
@@ -113,6 +136,8 @@ const initValues = async () => {
                 postReferences();
                 postPositions();
                 postTeams();
+                postEarphone();
+                postWebCams();
             } catch (error) {
                 console.log(error)
             };
