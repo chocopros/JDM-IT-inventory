@@ -53,7 +53,7 @@ const createAccesories = ( req, res ) => {
         res.status(400).json({
             message: `Fail Fields Register`,
             example: {
-                "employeId": "Sn",
+                "employeId": 1,
                 "earphoneId ": 1,
                 "wecamId": 1,
                 "others": "others"

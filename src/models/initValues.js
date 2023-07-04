@@ -4,7 +4,9 @@ const References = require("./references.models");
 const Positions = require("./positions.models");
 const Teams = require("./teams.models");
 const Earphones = require("./earphones.models");
-const WebCams = require('./webcams.models')
+const WebCams = require('./webcams.models');
+const Monitors = require('./monitors.models');
+const Computers = require("./computers.models");
 
 //> VALUES TYPE SUPPORTS (HARDWARE&SOFWARE)
 const postTypeSupports = async () => {
@@ -114,7 +116,43 @@ const postWebCams = async () => {
     ])
 };
 
+//MONITOR
+const initMonitor = async () => {
+    return await Monitors.bulkCreate([
+        /*1*/{serialNumber: "1CR92805MT", brand:"HP", model:"N246V", isActive: true},
+        /*2*/{serialNumber: "1CR938076T", brand:"HP", model:"N246V", isActive: true},
+        /*3*/{serialNumber: "GMXJ6HA081345", brand:"AOC ", model:"24B1", isActive: true},
+        /*4*/{serialNumber: "1CR8391H3G", brand:"HP", model:"N246V", isActive: true},
+        /*5*/{serialNumber: "AQCK61A001642 ", brand:"AOC", model:"E2270S", isActive: true},
+        /*6*/{serialNumber: "AQCI51A004872", brand:"AOC", model:"E2270S", isActive: true},
+        /*7*/{serialNumber: "1CR91715BP", brand:"HP", model:"N246V", isActive: true},
+        /*8*/{serialNumber: "1CR9191380", brand:"HP", model:"N246V", isActive: true},
+        /*9*/{serialNumber: "E29H9QA000525", brand:"AOC", model:"SWHE", isActive: true},
+        /*10*/{serialNumber: "E29H9QA000539", brand:"AOC", model:"SWHE", isActive: true}
+    ])
+};
 
+//COMPUTER
+const initComputer = async () => {
+    return await Computers.bulkCreate([
+        {isLaptop: false, isActive: true, serialNumber: "HM4HCX1", brand:"LENOVO", model:"ThinkCentre", processor: "Intel i7 3770 3.40Ghz", memoryRam: "32GB DDR3", hardDisk: "500 GB SSD", videoCard: "No"},
+        {isLaptop: false, isActive: true, serialNumber: "MJDYLTL ", brand:"LENOVO", model:"ThinkCentre", processor: "Intel i7 3770 3.40Ghz", memoryRam: "16GB DDR3", hardDisk: "500 GB SSD", videoCard: "No"},
+        {isLaptop: false, isActive: true, serialNumber: "MJCCHTB", brand:"LENOVO", model:"ThinkCentre", processor: "Intel i7 2600 3.40Ghz", memoryRam: "16GB DDR3", hardDisk: "120 GB SSD", videoCard: "ATI Radeon HD 2400"},
+        {isLaptop: false, isActive: true, serialNumber: "FNDZX12", brand:"DELL", model:"optiplex", processor: "Intel i5 4570 3.20Ghz", memoryRam: "32GB DDR3", hardDisk: "500 GB SSD", videoCard: "HD 6500 2GB GDDR3"},
+        {isLaptop: false, isActive: true, serialNumber: "59C8Y12", brand:"DELL", model:"optiplex", processor: "Intel i5 4570 3.20Ghz", memoryRam: "32GB DDR3", hardDisk: "500 GB SSD", videoCard: "No"},
+        {isLaptop: false, isActive: true, serialNumber: "FL7VN22", brand:"DELL", model:"optiplex", processor: "Intel i5 4590 3.30Ghz", memoryRam: "32GB DDR3", hardDisk: "500 GB SSD", videoCard: "No"}
+    ])
+};
+
+
+//> TEST
+/*
+try {
+    initComputer()
+} catch (error) {
+    console.log(error)
+}
+*/
 
 
 
@@ -138,6 +176,8 @@ const initValues = async () => {
                 postTeams();
                 postEarphone();
                 postWebCams();
+                initMonitor();
+                initComputer();
             } catch (error) {
                 console.log(error)
             };
