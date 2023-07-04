@@ -24,7 +24,7 @@ const Earphones = db.define('earphones', {
     imgUrl: {
         field: 'img_url',
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     }
 });
 

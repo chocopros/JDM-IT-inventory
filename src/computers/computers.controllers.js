@@ -4,6 +4,7 @@ const Computers = require("../models/computers.models");
 //> CREATE NEW COMPUTER
 const createNewComputer = async (dataComputer) => {
     return await Computers.create({
+        isLaptop: false,
         isActive: true,
         serialNumber: dataComputer.serialNumber,
         brand: dataComputer.brand,
@@ -19,7 +20,7 @@ const createNewComputer = async (dataComputer) => {
 //> GET ALL COMPUTERS
 const getAllComputers = async () => {
     return await Computers.findAndCountAll({
-        attributes: ['id','serialNumber','brand','model','processor','memoryRam','hardDisk','img_url']
+        attributes: ['id','serialNumber','is_laptop','brand','model','processor','memoryRam','hardDisk','img_url','videoCard']
     })
 };
 

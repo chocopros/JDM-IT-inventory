@@ -6,7 +6,7 @@ const employeesControllers = require('./employees.controllers')
 
 //> CREATE EMPLOYEE
 const createEmployee = ( req, res ) => {
-    const {firstName,lastName,age,email,password,teamId,positionId,computerId} = req.body
+    const {firstName,lastName,age,email,password,teamId,positionId,computerId} = req.body;
     if (firstName&&lastName&&age&&email&&password&&teamId&&positionId&&computerId) {
         employeesControllers.createNewEmployee({firstName,lastName,age,email,password,teamId,positionId,computerId})
             .then(r => res.status(201).json({message: `Employee: ${email} has Created`}))

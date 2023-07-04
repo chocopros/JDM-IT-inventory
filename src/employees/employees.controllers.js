@@ -6,6 +6,9 @@ const MoniEmployee = require("../models/monitorEmployee.models");
 const Monitors = require("../models/monitors.models");
 const Positions = require("../models/positions.models");
 const Teams = require("../models/teams.models");
+const Accesories = require('../models/accesories.models');
+const Earphones = require("../models/earphones.models");
+const Webcams = require("../models/webcams.models");
 
 //CREATE NEW EMPLOYEE
 const createNewEmployee = async (dataEmployee) => {
@@ -27,7 +30,7 @@ const createNewEmployee = async (dataEmployee) => {
 //GET ALL EMPLOYEES
 const getAllEmployees = async () => {
     return await Employees.findAndCountAll({
-        attributes: ['firstName','lastName','age','email'],
+        attributes: ['employeeId','firstName','lastName','age','email'],
         include: [
             {
                 model: Positions
@@ -47,7 +50,20 @@ const getAllEmployees = async () => {
                         model: Monitors
                     }
                 ]
+            },
+            {
+                model: Accesories,
+                attributes: ['id'],
+                include:[
+                    {
+                        model: Earphones
+                    },
+                    {
+                        model: Webcams
+                    }
+                ]
             }
+            
         ]
     })
 };
