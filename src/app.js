@@ -35,8 +35,6 @@ initModels()
 
 
 
-
-
 // INDEX SERVER
 app.get('/', (req, res, next) => {
     console.log(req.method)

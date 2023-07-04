@@ -10,7 +10,7 @@ const createNewMonitor = async (dataMonitor) => {
         serialNumber: dataMonitor.serialNumber,
         brand: dataMonitor.brand,
         model: dataMonitor.model,
-        screenSize: '21 Plugin.'
+        screenSize: '21 Pulg.'
     })
 };
 
