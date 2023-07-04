@@ -19,7 +19,6 @@ const getAllPositions = async () => {
 
 module.exports = {
     createNewPosition,
-    getAllPositions,
-    initialsPositions
+    getAllPositions
 };
 

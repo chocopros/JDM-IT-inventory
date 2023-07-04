@@ -159,6 +159,7 @@ try {
 const initValues = async () => {
 
     const dataPositions = await Positions.count();
+    console.log(dataPositions)
     
     if (dataPositions === 0) {
         const dataStatus = await Status.count();

@@ -35,12 +35,9 @@ db.sync()
     })
     .catch(err => console.log(err));
 
-<<<<<<< HEAD
-=======
 initModels();
 
 
->>>>>>> b217e2f6d1555d007c527a41e8f28538fbd6624a
 // INDEX SERVER
 app.get('/', (req, res, next) => {
     console.log(req.method);
