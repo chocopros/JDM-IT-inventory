@@ -7,7 +7,8 @@ const Earphones = require("./earphones.models");
 const WebCams = require('./webcams.models');
 const Monitors = require('./monitors.models');
 const Computers = require("./computers.models");
-const Employees = require('./employees.models')
+const Employees = require('./employees.models');
+const MoniEmployee = require('./monitorEmployee.models');
 
 //> VALUES TYPE SUPPORTS (HARDWARE&SOFWARE)
 const postTypeSupports = async () => {
@@ -245,7 +246,7 @@ const initEmployees = async () => {
         /*21*/{firstName: 'andrea', lastName: 'brito', age: 30, email: 'abrito@jdmgroupcompany.com', password: '123', teamId: 17,  positionId:4, computerId: 21, status: 'is_active', isValidated: true, role: 'normal'},
         /*22*/{firstName: 'kairlys', lastName: 'ramirez', age: 30, email: 'kramirez@jdmgroupcompany.com', password: '123', teamId: 13,  positionId:4, computerId: 22, status: 'is_active', isValidated: true, role: 'normal'},
         /*23*/{firstName: 'patricia', lastName: 'rodriguez', age: 28, email: 'prodriguez@jdmgroupcompany.com', password: '123', teamId: 13,  positionId:5, computerId: 23, status: 'is_active', isValidated: true, role: 'normal'},
-        /*24*/{firstName: 'barbara', lastName: 'hibirmas', age: 29, email: 'kramirez@jdmgroupcompany.com', password: '123', teamId: 1,  positionId:10, computerId: 24, status: 'is_active', isValidated: true, role: 'normal'},
+        /*24*/{firstName: 'barbara', lastName: 'hibirmas', age: 29, email: 'bhibirmas@jdmgroupcompany.com', password: '123', teamId: 1,  positionId:10, computerId: 24, status: 'is_active', isValidated: true, role: 'normal'},
         /*25*/{firstName: 'alejandra', lastName: 'matheus', age: 22, email: 'amatheus@jdmgroupcompany.com', password: '123', teamId: 9,  positionId:6, computerId: 25, status: 'is_active', isValidated: true, role: 'normal'},
         /*26*/{firstName: 'lourisa', lastName: 'caraballo', age: 27, email: 'lcaraballo@jdmgroupcompany.com', password: '123', teamId: 2,  positionId:16, computerId: 26, status: 'is_active', isValidated: true, role: 'normal'},
         /*27*/{firstName: 'roxana', lastName: 'mendez', age: 27, email: 'rmendez@jdmgroupcompany.com', password: '123', teamId: 14,  positionId:6, computerId: 27, status: 'is_active', isValidated: true, role: 'normal'},
@@ -255,12 +256,68 @@ const initEmployees = async () => {
         /*31*/{firstName: 'eduardo', lastName: 'flores', age: 35, email: 'eflores@jdmgroupcompany.com', password: '123', teamId: 2,  positionId:16, computerId: 31, status: 'is_active', isValidated: true, role: 'normal'},
         /*32*/{firstName: 'felix', lastName: 'villaroel', age: 31, email: 'fvillaroel@jdmgroupcompany.com', password: '123', teamId: 14,  positionId:4, computerId: 32, status: 'is_active', isValidated: true, role: 'normal'},
         /*33*/{firstName: 'douglas', lastName: 'martinez', age: 26, email: 'dmartinez@jdmgroupcompany.com', password: '123', teamId: 14,  positionId:5, computerId: 33, status: 'is_active', isValidated: true, role: 'normal'},
-        /*34*/{firstName: 'orlando gomez', lastName: 'guilarte', age: 30, email: 'jguilarte@jdmgroupcompany.com', password: '123', teamId: 14,  positionId:4, computerId: 34, status: 'is_active', isValidated: true, role: 'normal'},
+        /*34*/{firstName: 'orlando gomez', lastName: 'guilarte', age: 30, email: 'ogomez@jdmgroupcompany.com', password: '123', teamId: 14,  positionId:4, computerId: 34, status: 'is_active', isValidated: true, role: 'normal'},
         /*35*/{firstName: 'stefany', lastName: 'marcano', age: 30, email: 'smarcano@jdmgroupcompany.com', password: '123', teamId: 13,  positionId:4, computerId: 35, status: 'is_active', isValidated: true, role: 'normal'},
         /*36*/{firstName: 'new', lastName: 'cobalt', age: 30, email: 'ncobalt@jdmgroupcompany.com', password: '123', teamId: 13,  positionId:5, computerId: 36, status: 'is_active', isValidated: true, role: 'normal'}
     ])
 };
 
+const initMonitorEmployees = async () => {
+    return await MoniEmployee.bulkCreate([
+        /*01*/{monitorId: 1, employeeEmployeeId: 1},
+        /*02*/{monitorId: 2, employeeEmployeeId: 2},
+        /*03*/{monitorId: 3, employeeEmployeeId: 3},
+        /*05*/{monitorId: 4, employeeEmployeeId: 5},
+        /*06*/{monitorId: 5, employeeEmployeeId: 6},
+        /*06*/{monitorId: 6, employeeEmployeeId: 6},
+        /*07*/{monitorId: 7, employeeEmployeeId: 7},
+        /*07*/{monitorId: 8, employeeEmployeeId: 7},
+        /*08*/{monitorId: 9, employeeEmployeeId: 8},
+        /*09*/{monitorId: 10, employeeEmployeeId: 9},
+        /*09*/{monitorId: 11, employeeEmployeeId: 9},
+        /*10*/{monitorId: 12, employeeEmployeeId: 10},
+        /*11*/{monitorId: 13, employeeEmployeeId: 11},
+        /*11*/{monitorId: 14, employeeEmployeeId: 11},
+        /*12*/{monitorId: 15, employeeEmployeeId: 12},
+        /*06*/{monitorId: 16, employeeEmployeeId: 12},
+        /*06*/{monitorId: 17, employeeEmployeeId: 13},
+        /*06*/{monitorId: 18, employeeEmployeeId: 13},
+        /*06*/{monitorId: 19, employeeEmployeeId: 14},
+        /*06*/{monitorId: 20, employeeEmployeeId: 14},
+        /*06*/{monitorId: 21, employeeEmployeeId: 15},
+        /*06*/{monitorId: 22, employeeEmployeeId: 15},
+        /*06*/{monitorId: 23, employeeEmployeeId: 16},
+        /*06*/{monitorId: 24, employeeEmployeeId: 16},
+        /*06*/{monitorId: 25, employeeEmployeeId: 17},
+        /*06*/{monitorId: 26, employeeEmployeeId: 17},
+        /*06*/{monitorId: 27, employeeEmployeeId: 18},
+        /*06*/{monitorId: 28, employeeEmployeeId: 19},
+        /*06*/{monitorId: 29, employeeEmployeeId: 20},
+        /*06*/{monitorId: 30, employeeEmployeeId: 20},
+        /*06*/{monitorId: 31, employeeEmployeeId: 21},
+        /*06*/{monitorId: 32, employeeEmployeeId: 22},
+        /*06*/{monitorId: 33, employeeEmployeeId: 23},
+        /*06*/{monitorId: 34, employeeEmployeeId: 24},
+        /*06*/{monitorId: 35, employeeEmployeeId: 25},
+        /*06*/{monitorId: 36, employeeEmployeeId: 26},
+        /*06*/{monitorId: 37, employeeEmployeeId: 26},
+        /*06*/{monitorId: 38, employeeEmployeeId: 27},
+        /*06*/{monitorId: 39, employeeEmployeeId: 28},
+        /*06*/{monitorId: 40, employeeEmployeeId: 29},
+        /*06*/{monitorId: 41, employeeEmployeeId: 30},
+        /*06*/{monitorId: 42, employeeEmployeeId: 31},
+        /*06*/{monitorId: 43, employeeEmployeeId: 31},
+        /*06*/{monitorId: 44, employeeEmployeeId: 32},
+        /*06*/{monitorId: 45, employeeEmployeeId: 32},
+        /*06*/{monitorId: 46, employeeEmployeeId: 33},
+        /*06*/{monitorId: 47, employeeEmployeeId: 33},
+        /*06*/{monitorId: 48, employeeEmployeeId: 34},
+        /*06*/{monitorId: 49, employeeEmployeeId: 35}
+
+    ])
+        
+    
+};
 
 //> TEST
 /*
@@ -299,6 +356,7 @@ const initValues = async () => {
                 initMonitor();
                 initComputer();
                 initEmployees();
+                initMonitorEmployees();
             } catch (error) {
                 console.log(error)
             };
