@@ -244,12 +244,20 @@ const initEmployees = async () => {
         /*20*/{firstName: 'joaquina', lastName: 'valle', age: 30, email: 'jvalle@jdmgroupcompany.com', password: '123', teamId: 17,  positionId:4, computerId: 20, status: 'is_active', isValidated: true, role: 'normal'},
         /*21*/{firstName: 'andrea', lastName: 'brito', age: 30, email: 'abrito@jdmgroupcompany.com', password: '123', teamId: 17,  positionId:4, computerId: 21, status: 'is_active', isValidated: true, role: 'normal'},
         /*22*/{firstName: 'kairlys', lastName: 'ramirez', age: 30, email: 'kramirez@jdmgroupcompany.com', password: '123', teamId: 13,  positionId:4, computerId: 22, status: 'is_active', isValidated: true, role: 'normal'},
-        /*23*/{firstName: 'patricia', lastName: 'rodriguez', age: 28, email: 'prodriguez@jdmgroupcompany.com', password: '123', teamId: 13,  positionId:5, computerId: 22, status: 'is_active', isValidated: true, role: 'normal'},
-        /*24*/{firstName: 'barbara', lastName: 'hibirmas', age: 29, email: 'kramirez@jdmgroupcompany.com', password: '123', teamId: 1,  positionId:10, computerId: 23, status: 'is_active', isValidated: true, role: 'normal'},
-        /*25*/{firstName: 'alejandra', lastName: 'matheus', age: 22, email: 'amatheus@jdmgroupcompany.com', password: '123', teamId: 9,  positionId:6, computerId: 24, status: 'is_active', isValidated: true, role: 'normal'},
-        /*26*/{firstName: 'roxana', lastName: 'mendez', age: 27, email: 'rmendez@jdmgroupcompany.com', password: '123', teamId: 14,  positionId:6, computerId: 25, status: 'is_active', isValidated: true, role: 'normal'},
-        /*27*/{firstName: 'kairlys', lastName: 'Ramirez', age: 30, email: 'kramirez@jdmgroupcompany.com', password: '123', teamId: 13,  positionId:4, computerId: 26, status: 'is_active', isValidated: true, role: 'normal'},
-        /*28*/{firstName: 'kairlys', lastName: 'Ramirez', age: 30, email: 'kramirez@jdmgroupcompany.com', password: '123', teamId: 13,  positionId:4, computerId: 27, status: 'is_active', isValidated: true, role: 'normal'}
+        /*23*/{firstName: 'patricia', lastName: 'rodriguez', age: 28, email: 'prodriguez@jdmgroupcompany.com', password: '123', teamId: 13,  positionId:5, computerId: 23, status: 'is_active', isValidated: true, role: 'normal'},
+        /*24*/{firstName: 'barbara', lastName: 'hibirmas', age: 29, email: 'kramirez@jdmgroupcompany.com', password: '123', teamId: 1,  positionId:10, computerId: 24, status: 'is_active', isValidated: true, role: 'normal'},
+        /*25*/{firstName: 'alejandra', lastName: 'matheus', age: 22, email: 'amatheus@jdmgroupcompany.com', password: '123', teamId: 9,  positionId:6, computerId: 25, status: 'is_active', isValidated: true, role: 'normal'},
+        /*26*/{firstName: 'lourisa', lastName: 'caraballo', age: 27, email: 'lcaraballo@jdmgroupcompany.com', password: '123', teamId: 2,  positionId:16, computerId: 26, status: 'is_active', isValidated: true, role: 'normal'},
+        /*27*/{firstName: 'roxana', lastName: 'mendez', age: 27, email: 'rmendez@jdmgroupcompany.com', password: '123', teamId: 14,  positionId:6, computerId: 27, status: 'is_active', isValidated: true, role: 'normal'},
+        /*28*/{firstName: 'margeris', lastName: 'pastrano', age: 30, email: 'mpastrano@jdmgroupcompany.com', password: '123', teamId: 13,  positionId:5, computerId: 28, status: 'is_active', isValidated: true, role: 'normal'},
+        /*29*/{firstName: 'jorserdith', lastName: 'guilarte', age: 30, email: 'jguilarte@jdmgroupcompany.com', password: '123', teamId: 15,  positionId:4, computerId: 29, status: 'is_active', isValidated: true, role: 'normal'},
+        /*30*/{firstName: 'sarah', lastName: 'rodriguez', age: 27, email: 'srodriguez@jdmgroupcompany.com', password: '123', teamId: 15,  positionId:4, computerId: 30, status: 'is_active', isValidated: true, role: 'normal'},
+        /*31*/{firstName: 'eduardo', lastName: 'flores', age: 35, email: 'eflores@jdmgroupcompany.com', password: '123', teamId: 2,  positionId:16, computerId: 31, status: 'is_active', isValidated: true, role: 'normal'},
+        /*32*/{firstName: 'felix', lastName: 'villaroel', age: 31, email: 'fvillaroel@jdmgroupcompany.com', password: '123', teamId: 14,  positionId:4, computerId: 32, status: 'is_active', isValidated: true, role: 'normal'},
+        /*33*/{firstName: 'douglas', lastName: 'martinez', age: 26, email: 'dmartinez@jdmgroupcompany.com', password: '123', teamId: 14,  positionId:5, computerId: 33, status: 'is_active', isValidated: true, role: 'normal'},
+        /*34*/{firstName: 'orlando gomez', lastName: 'guilarte', age: 30, email: 'jguilarte@jdmgroupcompany.com', password: '123', teamId: 14,  positionId:4, computerId: 34, status: 'is_active', isValidated: true, role: 'normal'},
+        /*35*/{firstName: 'stefany', lastName: 'marcano', age: 30, email: 'smarcano@jdmgroupcompany.com', password: '123', teamId: 13,  positionId:4, computerId: 35, status: 'is_active', isValidated: true, role: 'normal'},
+        /*36*/{firstName: 'new', lastName: 'cobalt', age: 30, email: 'ncobalt@jdmgroupcompany.com', password: '123', teamId: 13,  positionId:5, computerId: 36, status: 'is_active', isValidated: true, role: 'normal'}
     ])
 };
 
